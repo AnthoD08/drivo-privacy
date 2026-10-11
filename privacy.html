@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Drivo Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Layout: night-blue header band, one reading column, a data table as the page's anchor. */
+  :root {
+    --bg: #EEF1F5; --surface: #FFFFFF; --line: #D9DEE5; --fg: #121418; --muted: #535B67;
+    --brand: #2C4466; --on-brand: #FFFFFF; --link: #2C4466;
+    --display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #0F1217; --surface: #171B22; --line: #2A313B; --fg: #E8ECF1; --muted: #9AA3AF;
+    --brand: #22354F; --on-brand: #FFFFFF; --link: #9DBBE6; color-scheme: dark } }
+  :root[data-theme="dark"] {
+    --bg: #0F1217; --surface: #171B22; --line: #2A313B; --fg: #E8ECF1; --muted: #9AA3AF;
+    --brand: #22354F; --on-brand: #FFFFFF; --link: #9DBBE6; color-scheme: dark }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 400 1rem/1.6 var(--body); -webkit-text-size-adjust: 100%; }
+  header { background: var(--brand); color: var(--on-brand); padding-inline: 16px; }
+  .bar, main, footer { max-width: 44rem; margin-inline: auto; }
+  .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-block: 18px; }
+  .wordmark { font: 700 1.35rem/1 var(--display); letter-spacing: -0.01em; }
+  .lang { display: flex; gap: 4px; background: rgb(255 255 255 / 0.12); border-radius: 10px; padding: 4px; }
+  .lang button { font: 600 0.85rem/1 var(--body); color: var(--on-brand); background: transparent; border: 0; border-radius: 7px; padding: 10px 14px; min-height: 44px; min-width: 44px; cursor: pointer; letter-spacing: 0.04em; }
+  .lang button[aria-pressed="true"] { background: var(--on-brand); color: #2C4466; }
+  .lang button:focus-visible { outline: 2px solid var(--on-brand); outline-offset: 2px; }
+  .hero { padding-block: 8px 32px; }
+  h1 { font: 700 clamp(1.9rem, 6vw, 2.6rem)/1.1 var(--display); margin: 0; text-wrap: balance; letter-spacing: -0.015em; }
+  .hero p { margin: 10px 0 0; opacity: 0.85; }
+  main { padding: 32px 16px 8px; display: grid; gap: 28px; }
+  article { display: grid; gap: 28px; }
+  section { display: grid; gap: 8px; }
+  h2 { font: 700 1.25rem/1.25 var(--display); margin: 0; text-wrap: balance; }
+  p, ul { margin: 0; max-width: 65ch; }
+  ul { padding-left: 1.2em; display: grid; gap: 6px; }
+  a { color: var(--link); text-underline-offset: 2px; }
+  .lead { font-size: 1.1rem; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+  table { width: 100%; border-collapse: collapse; min-width: 34rem; font-size: 0.95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  tr:last-child td { border-bottom: 0; }
+  th { font: 600 0.75rem/1.2 var(--body); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  .chip { display: inline-block; font: 600 0.78rem/1 var(--body); padding: 5px 8px; border-radius: 6px; border: 1px solid var(--line); white-space: nowrap; }
+  .chip.device { color: var(--fg); }
+  .chip.shared { color: var(--fg); background: var(--bg); }
+  .email { font-weight: 600; user-select: all; }
+  footer { padding: 24px 16px 40px; color: var(--muted); font-size: 0.875rem; }
+</style>
+
+</head>
+<body>
+<header>
+  <div class="bar">
+    <span class="wordmark">Drivo</span>
+    <div class="lang" role="group" aria-label="Language / Langue">
+      <button type="button" id="btn-en" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" id="btn-fr" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+  <div class="bar hero">
+    <div>
+      <h1 data-en="Privacy Policy" data-fr="Politique de confidentialité">Privacy Policy</h1>
+      <p data-en="Last updated: October 11, 2026" data-fr="Dernière mise à jour : 11 octobre 2026">Last updated: October 11, 2026</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article lang="en" id="en">
+    <p class="lead">Drivo lets you customize your car's screen with widgets and a connection sound. It has no account, no ads and no tracking. Almost everything you create stays on your iPhone.</p>
+
+    <section>
+      <h2>What Drivo uses, at a glance</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Data</th><th>Why</th><th>Where it goes</th></tr></thead>
+          <tbody>
+            <tr><td>Photos of your car</td><td>Shown in your widgets</td><td><span class="chip device">Stays on your iPhone</span></td></tr>
+            <tr><td>Sounds you record or import</td><td>Played when your iPhone connects to CarPlay</td><td><span class="chip device">Stays on your iPhone</span></td></tr>
+            <tr><td>Your first name, your car's nickname, your settings and onboarding answers</td><td>Voice greeting, widget text, your dashboard</td><td><span class="chip device">Stays on your iPhone</span></td></tr>
+            <tr><td>Approximate location (about 1 km)</td><td>Local weather, only if you turn it on</td><td><span class="chip shared">Apple WeatherKit</span></td></tr>
+            <tr><td>Anonymous app ID and subscription status</td><td>Unlock Drivo Premium, restore purchases</td><td><span class="chip shared">RevenueCat</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data that stays on your device</h2>
+      <p>Your photos, sounds, recordings, first name, car nickname, settings and onboarding answers are stored on your iPhone, in a space shared only between the Drivo app and its widgets. We don't receive them and we don't keep a copy. Deleting Drivo deletes them.</p>
+      <p>The camera, photo library and microphone are used only when you choose to take or pick a photo, or record a sound. The voice greeting uses your iPhone's built-in voices, on the device.</p>
+    </section>
+
+    <section>
+      <h2>Weather and location</h2>
+      <p>If you turn on the weather, Drivo asks for your location while you use the app. The position is rounded to about 1 km, then sent to Apple's WeatherKit service to get the current temperature. The last rounded position is kept on your iPhone so the weather can refresh in the background. Apple's handling of this request is covered by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. You can turn location off at any time in your iPhone's Settings.</p>
+    </section>
+
+    <section>
+      <h2>Subscriptions</h2>
+      <p>Payments are handled entirely by Apple. We never see your payment details. To know whether your subscription is active, Drivo uses RevenueCat, which receives an anonymous app identifier, your purchase history for Drivo and basic technical data (device model, iOS version, app version, IP address). See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a>.</p>
+    </section>
+
+    <section>
+      <h2>Notifications</h2>
+      <p>The reminder before the end of your free trial is scheduled on your iPhone. No notification data is sent to us.</p>
+    </section>
+
+    <section>
+      <h2>What we don't do</h2>
+      <ul>
+        <li>No account, no sign-in.</li>
+        <li>No advertising and no tracking across apps or websites.</li>
+        <li>No analytics tools.</li>
+        <li>We never sell or rent your data.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How long data is kept</h2>
+      <p>Data on your iPhone is kept until you delete it or delete the app. RevenueCat keeps subscription records for as long as needed to provide your subscription and meet legal obligations.</p>
+    </section>
+
+    <section>
+      <h2>Your rights</h2>
+      <p>Depending on where you live (including under the GDPR in the European Union), you can ask to access, correct or delete your data, or object to its use. Because Drivo has no account, the only data we can act on is the subscription record linked to your anonymous app ID. Write to us and we'll help. You can also complain to your data protection authority (in France, the CNIL).</p>
+    </section>
+
+    <section>
+      <h2>Children</h2>
+      <p>Drivo is not directed to children under 13 and does not knowingly collect their personal data.</p>
+    </section>
+
+    <section>
+      <h2>Changes</h2>
+      <p>If this policy changes, we'll update this page and the date at the top.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Drivo is published by Anthony Delmotte. For any privacy question: <span class="email">drivoapp.support@gmail.com</span></p>
+    </section>
+  </article>
+
+  <article lang="fr" id="fr" hidden>
+    <p class="lead">Drivo vous permet de personnaliser l'écran de votre voiture avec des widgets et un son de connexion. L'app n'a ni compte, ni publicité, ni suivi. Presque tout ce que vous créez reste sur votre iPhone.</p>
+
+    <section>
+      <h2>Ce que Drivo utilise, en un coup d'œil</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Donnée</th><th>Pourquoi</th><th>Où elle va</th></tr></thead>
+          <tbody>
+            <tr><td>Photos de votre voiture</td><td>Affichées dans vos widgets</td><td><span class="chip device">Reste sur votre iPhone</span></td></tr>
+            <tr><td>Sons enregistrés ou importés</td><td>Joués quand l'iPhone se connecte à CarPlay</td><td><span class="chip device">Reste sur votre iPhone</span></td></tr>
+            <tr><td>Votre prénom, le surnom de votre voiture, vos réglages et vos réponses au questionnaire</td><td>Message vocal, texte des widgets, votre tableau de bord</td><td><span class="chip device">Reste sur votre iPhone</span></td></tr>
+            <tr><td>Position approximative (environ 1 km)</td><td>Météo locale, seulement si vous l'activez</td><td><span class="chip shared">Apple WeatherKit</span></td></tr>
+            <tr><td>Identifiant anonyme et état de l'abonnement</td><td>Débloquer Drivo Premium, restaurer les achats</td><td><span class="chip shared">RevenueCat</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Les données qui restent sur votre appareil</h2>
+      <p>Vos photos, sons, enregistrements, prénom, surnom de voiture, réglages et réponses au questionnaire sont stockés sur votre iPhone, dans un espace partagé uniquement entre l'app Drivo et ses widgets. Nous ne les recevons pas et n'en gardons aucune copie. Supprimer Drivo les supprime.</p>
+      <p>L'appareil photo, la photothèque et le micro ne sont utilisés que lorsque vous choisissez de prendre ou de sélectionner une photo, ou d'enregistrer un son. Le message vocal utilise les voix intégrées de votre iPhone, sur l'appareil.</p>
+    </section>
+
+    <section>
+      <h2>Météo et position</h2>
+      <p>Si vous activez la météo, Drivo demande votre position pendant l'utilisation de l'app. La position est arrondie à environ 1 km, puis envoyée au service WeatherKit d'Apple pour obtenir la température. La dernière position arrondie est conservée sur votre iPhone pour actualiser la météo en arrière-plan. Le traitement de cette requête par Apple relève de la <a href="https://www.apple.com/fr/legal/privacy/" target="_blank" rel="noopener">politique de confidentialité d'Apple</a>. Vous pouvez désactiver la localisation à tout moment dans les Réglages de l'iPhone.</p>
+    </section>
+
+    <section>
+      <h2>Abonnements</h2>
+      <p>Les paiements sont entièrement gérés par Apple. Nous ne voyons jamais vos informations de paiement. Pour savoir si votre abonnement est actif, Drivo utilise RevenueCat, qui reçoit un identifiant anonyme, votre historique d'achats Drivo et des données techniques de base (modèle d'appareil, version d'iOS, version de l'app, adresse IP). Voir la <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">politique de confidentialité de RevenueCat</a>.</p>
+    </section>
+
+    <section>
+      <h2>Notifications</h2>
+      <p>Le rappel avant la fin de l'essai gratuit est programmé sur votre iPhone. Aucune donnée de notification ne nous est envoyée.</p>
+    </section>
+
+    <section>
+      <h2>Ce que nous ne faisons pas</h2>
+      <ul>
+        <li>Pas de compte, pas de connexion.</li>
+        <li>Pas de publicité ni de suivi entre apps ou sites web.</li>
+        <li>Pas d'outil de mesure d'audience.</li>
+        <li>Nous ne vendons ni ne louons jamais vos données.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Durée de conservation</h2>
+      <p>Les données sur votre iPhone sont conservées jusqu'à ce que vous les supprimiez ou supprimiez l'app. RevenueCat conserve l'historique d'abonnement le temps nécessaire pour fournir l'abonnement et respecter les obligations légales.</p>
+    </section>
+
+    <section>
+      <h2>Vos droits</h2>
+      <p>Selon votre lieu de résidence (notamment au titre du RGPD dans l'Union européenne), vous pouvez demander l'accès, la rectification ou la suppression de vos données, ou vous opposer à leur utilisation. Drivo n'ayant pas de compte, la seule donnée sur laquelle nous pouvons agir est l'historique d'abonnement lié à votre identifiant anonyme. Écrivez-nous, nous vous aiderons. Vous pouvez aussi saisir l'autorité de protection des données (en France, la CNIL).</p>
+    </section>
+
+    <section>
+      <h2>Enfants</h2>
+      <p>Drivo ne s'adresse pas aux enfants de moins de 13 ans et ne collecte pas sciemment leurs données personnelles.</p>
+    </section>
+
+    <section>
+      <h2>Modifications</h2>
+      <p>Si cette politique change, nous mettrons à jour cette page et la date indiquée en haut.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Drivo est édité par Anthony Delmotte. Pour toute question sur vos données : <span class="email">drivoapp.support@gmail.com</span></p>
+    </section>
+  </article>
+</main>
+
+<footer>
+  <p><a href="/" data-en="Help &amp; support" data-fr="Aide et support">Help &amp; support</a></p>
+  <p data-en="Drivo is not affiliated with Apple or any car manufacturer. CarPlay is a trademark of Apple Inc." data-fr="Drivo n'est affilié ni à Apple ni à aucun constructeur automobile. CarPlay est une marque d'Apple Inc.">Drivo is not affiliated with Apple or any car manufacturer. CarPlay is a trademark of Apple Inc.</p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    for (const l of ["en", "fr"]) {
+      document.getElementById(l).hidden = l !== lang;
+      document.getElementById("btn-" + l).setAttribute("aria-pressed", String(l === lang));
+    }
+    document.querySelectorAll("[data-en]").forEach((el) => { el.textContent = el.dataset[lang]; });
+  }
+  document.querySelectorAll(".lang button").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.lang)));
+  const hash = location.hash.slice(1);
+  setLang(hash === "fr" || hash === "en" ? hash : (navigator.language || "en").toLowerCase().startsWith("fr") ? "fr" : "en");
+</script>
+</body>
+</html>

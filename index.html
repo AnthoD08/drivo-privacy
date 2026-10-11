@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Drivo Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Layout: night-blue header band, contact card first, then fixes grouped by what isn't working. */
+  :root {
+    --bg: #EEF1F5; --surface: #FFFFFF; --line: #D9DEE5; --fg: #121418; --muted: #535B67;
+    --brand: #2C4466; --on-brand: #FFFFFF; --link: #2C4466;
+    --display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #0F1217; --surface: #171B22; --line: #2A313B; --fg: #E8ECF1; --muted: #9AA3AF;
+    --brand: #22354F; --on-brand: #FFFFFF; --link: #9DBBE6; color-scheme: dark } }
+  :root[data-theme="dark"] {
+    --bg: #0F1217; --surface: #171B22; --line: #2A313B; --fg: #E8ECF1; --muted: #9AA3AF;
+    --brand: #22354F; --on-brand: #FFFFFF; --link: #9DBBE6; color-scheme: dark }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 400 1rem/1.6 var(--body); -webkit-text-size-adjust: 100%; }
+  header { background: var(--brand); color: var(--on-brand); padding-inline: 16px; }
+  .bar, main, footer { max-width: 44rem; margin-inline: auto; }
+  .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-block: 18px; }
+  .wordmark { font: 700 1.35rem/1 var(--display); letter-spacing: -0.01em; }
+  .lang { display: flex; gap: 4px; background: rgb(255 255 255 / 0.12); border-radius: 10px; padding: 4px; }
+  .lang button { font: 600 0.85rem/1 var(--body); color: var(--on-brand); background: transparent; border: 0; border-radius: 7px; padding: 10px 14px; min-height: 44px; min-width: 44px; cursor: pointer; letter-spacing: 0.04em; }
+  .lang button[aria-pressed="true"] { background: var(--on-brand); color: #2C4466; }
+  .lang button:focus-visible { outline: 2px solid var(--on-brand); outline-offset: 2px; }
+  .hero { padding-block: 8px 32px; }
+  h1 { font: 700 clamp(1.9rem, 6vw, 2.6rem)/1.1 var(--display); margin: 0; text-wrap: balance; letter-spacing: -0.015em; }
+  .hero p { margin: 10px 0 0; opacity: 0.85; }
+  main { padding: 32px 16px 8px; }
+  article { display: grid; gap: 32px; }
+  .group { display: grid; gap: 20px; }
+  .eyebrow { font: 600 0.75rem/1.2 var(--body); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0; }
+  section { display: grid; gap: 8px; }
+  h2 { font: 700 1.25rem/1.25 var(--display); margin: 0; text-wrap: balance; }
+  p, ul, ol { margin: 0; max-width: 65ch; }
+  ul, ol { padding-left: 1.3em; display: grid; gap: 6px; }
+  a { color: var(--link); text-underline-offset: 2px; }
+  .path { font-weight: 600; white-space: nowrap; }
+  .contact { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: grid; gap: 10px; }
+  .email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .email { font: 600 1.1rem/1.3 var(--body); user-select: all; overflow-wrap: anywhere; }
+  .copy { font: 600 0.9rem/1 var(--body); color: var(--on-brand); background: #2C4466; border: 0; border-radius: 12px; padding: 12px 16px; min-height: 44px; cursor: pointer; }
+  .copy:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+  .hint { color: var(--muted); font-size: 0.925rem; }
+  footer { padding: 24px 16px 40px; color: var(--muted); font-size: 0.875rem; display: grid; gap: 6px; }
+</style>
+
+</head>
+<body>
+<header>
+  <div class="bar">
+    <span class="wordmark">Drivo</span>
+    <div class="lang" role="group" aria-label="Language / Langue">
+      <button type="button" id="btn-en" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" id="btn-fr" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+  <div class="bar hero">
+    <div>
+      <h1 data-en="How can we help?" data-fr="Comment pouvons-nous vous aider ?">How can we help?</h1>
+      <p data-en="Fixes for the most common questions, and how to reach us." data-fr="Les solutions aux questions les plus fréquentes, et comment nous joindre.">Fixes for the most common questions, and how to reach us.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article lang="en" id="en">
+    <div class="contact">
+      <h2>Write to us</h2>
+      <div class="email-row">
+        <span class="email">drivoapp.support@gmail.com</span>
+        <button type="button" class="copy" id="copy-en">Copy address</button>
+      </div>
+      <p class="hint">Tell us your iPhone model, your iOS version and your car if it's about CarPlay. A screenshot helps a lot.</p>
+    </div>
+
+    <div class="group">
+      <p class="eyebrow">Widgets</p>
+      <section>
+        <h2>My widgets don't show in the car</h2>
+        <p>Widgets on the CarPlay screen need iOS 26. Then add them once, on your iPhone:</p>
+        <ol>
+          <li>Open Settings, then <span class="path">General › CarPlay</span>.</li>
+          <li>Choose your car, then Widgets.</li>
+          <li>Add “Drivo Photo” and “Drivo Clock” (and “Drivo Weather” if you like).</li>
+        </ol>
+        <p>In the car, your widgets are on the very first CarPlay page, on the left. Swipe the screen to the right until you can't go further. If your car isn't listed in Settings, connect it to CarPlay at least once.</p>
+      </section>
+      <section>
+        <h2>The widget doesn't show my latest changes</h2>
+        <p>Drivo updates your widgets as soon as you change something in the app. If one still looks old, open Drivo once, wait a minute, then look again. iOS sometimes delays widget updates to save battery.</p>
+      </section>
+      <section>
+        <h2>The weather isn't showing</h2>
+        <p>Turn on the weather in Drivo and allow location access when asked. If you said no earlier, go to <span class="path">Settings › Drivo › Location</span> and choose “While Using the App”.</p>
+      </section>
+    </div>
+
+    <div class="group">
+      <p class="eyebrow">Connection sound</p>
+      <section>
+        <h2>The sound doesn't play when I connect</h2>
+        <p>The sound is played by an automation you create once in the Shortcuts app. Drivo guides you through it, and here are the steps:</p>
+        <ol>
+          <li>Open Shortcuts, then the Automation tab.</li>
+          <li>Tap +, then choose CarPlay.</li>
+          <li>Choose “Connects”, then “Run Immediately”.</li>
+          <li>Add the “Play Drivo sound” action.</li>
+        </ol>
+        <p>If the automation exists but stays silent, check that “Run Immediately” is selected and that your car's volume is up on the CarPlay audio source.</p>
+      </section>
+      <section>
+        <h2>How do I change the sound?</h2>
+        <p>Pick another sound in Drivo. The automation always plays the sound currently selected in the app, so there's nothing to change in Shortcuts.</p>
+      </section>
+    </div>
+
+    <div class="group">
+      <p class="eyebrow">Subscription</p>
+      <section>
+        <h2>I subscribed but Premium isn't active</h2>
+        <p>Open Drivo and tap Restore, on the subscription screen or in Settings. Make sure you're signed in with the Apple Account you used to subscribe.</p>
+      </section>
+      <section>
+        <h2>How do I cancel?</h2>
+        <p>On your iPhone, open Settings, tap your name, then Subscriptions, and choose Drivo. To avoid being charged after the free trial, cancel at least 24 hours before it ends. Drivo can remind you before the trial ends.</p>
+      </section>
+      <section>
+        <h2>How do I get a refund?</h2>
+        <p>Payments go through Apple, so refunds are handled by Apple at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+      </section>
+    </div>
+  </article>
+
+  <article lang="fr" id="fr" hidden>
+    <div class="contact">
+      <h2>Écrivez-nous</h2>
+      <div class="email-row">
+        <span class="email">drivoapp.support@gmail.com</span>
+        <button type="button" class="copy" id="copy-fr">Copier l'adresse</button>
+      </div>
+      <p class="hint">Indiquez votre modèle d'iPhone, votre version d'iOS et votre voiture si la question concerne CarPlay. Une capture d'écran aide beaucoup.</p>
+    </div>
+
+    <div class="group">
+      <p class="eyebrow">Widgets</p>
+      <section>
+        <h2>Mes widgets ne s'affichent pas dans la voiture</h2>
+        <p>Les widgets sur l'écran CarPlay nécessitent iOS 26. Ajoutez-les ensuite une fois, sur votre iPhone :</p>
+        <ol>
+          <li>Ouvrez Réglages, puis <span class="path">Général › CarPlay</span>.</li>
+          <li>Choisissez votre voiture, puis Widgets.</li>
+          <li>Ajoutez « Photo Drivo » et « Horloge Drivo » (et « Météo Drivo » si vous voulez).</li>
+        </ol>
+        <p>Dans la voiture, vos widgets sont sur la toute première page de CarPlay, à gauche. Faites glisser l'écran vers la droite jusqu'au bout. Si votre voiture n'apparaît pas dans Réglages, connectez-la au moins une fois à CarPlay.</p>
+      </section>
+      <section>
+        <h2>Le widget n'affiche pas mes derniers changements</h2>
+        <p>Drivo met à jour vos widgets dès que vous changez quelque chose dans l'app. Si l'un d'eux semble ancien, ouvrez Drivo, attendez une minute, puis regardez à nouveau. iOS retarde parfois les mises à jour des widgets pour économiser la batterie.</p>
+      </section>
+      <section>
+        <h2>La météo ne s'affiche pas</h2>
+        <p>Activez la météo dans Drivo et autorisez l'accès à la position quand c'est demandé. Si vous avez refusé, allez dans <span class="path">Réglages › Drivo › Position</span> et choisissez « Lorsque l'app est active ».</p>
+      </section>
+    </div>
+
+    <div class="group">
+      <p class="eyebrow">Son de connexion</p>
+      <section>
+        <h2>Le son ne se joue pas à la connexion</h2>
+        <p>Le son est joué par une automatisation que vous créez une fois dans l'app Raccourcis. Drivo vous guide, et voici les étapes :</p>
+        <ol>
+          <li>Ouvrez Raccourcis, puis l'onglet Automatisation.</li>
+          <li>Touchez +, puis choisissez CarPlay.</li>
+          <li>Choisissez « Se connecte », puis « Exécuter immédiatement ».</li>
+          <li>Ajoutez l'action « Jouer le son Drivo ».</li>
+        </ol>
+        <p>Si l'automatisation existe mais reste muette, vérifiez que « Exécuter immédiatement » est sélectionné et que le volume de la voiture est monté sur la source audio CarPlay.</p>
+      </section>
+      <section>
+        <h2>Comment changer de son ?</h2>
+        <p>Choisissez un autre son dans Drivo. L'automatisation joue toujours le son sélectionné dans l'app : rien à modifier dans Raccourcis.</p>
+      </section>
+    </div>
+
+    <div class="group">
+      <p class="eyebrow">Abonnement</p>
+      <section>
+        <h2>Je suis abonné mais Premium n'est pas actif</h2>
+        <p>Ouvrez Drivo et touchez Restaurer, sur l'écran d'abonnement ou dans les Réglages de l'app. Vérifiez que vous êtes connecté avec le compte Apple utilisé pour l'abonnement.</p>
+      </section>
+      <section>
+        <h2>Comment résilier ?</h2>
+        <p>Sur votre iPhone, ouvrez Réglages, touchez votre nom, puis Abonnements, et choisissez Drivo. Pour ne pas être prélevé après l'essai gratuit, résiliez au moins 24 heures avant sa fin. Drivo peut vous envoyer un rappel avant la fin de l'essai.</p>
+      </section>
+      <section>
+        <h2>Comment obtenir un remboursement ?</h2>
+        <p>Les paiements passent par Apple : les remboursements se demandent à Apple sur <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+      </section>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <p><a href="/privacy" data-en="Privacy Policy" data-fr="Politique de confidentialité">Privacy Policy</a></p>
+  <p data-en="Drivo is not affiliated with Apple or any car manufacturer. CarPlay is a trademark of Apple Inc." data-fr="Drivo n'est affilié ni à Apple ni à aucun constructeur automobile. CarPlay est une marque d'Apple Inc.">Drivo is not affiliated with Apple or any car manufacturer. CarPlay is a trademark of Apple Inc.</p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    for (const l of ["en", "fr"]) {
+      document.getElementById(l).hidden = l !== lang;
+      document.getElementById("btn-" + l).setAttribute("aria-pressed", String(l === lang));
+    }
+    document.querySelectorAll("[data-en]").forEach((el) => { el.textContent = el.dataset[lang]; });
+  }
+  document.querySelectorAll(".lang button").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.lang)));
+  for (const l of ["en", "fr"]) {
+    const button = document.getElementById("copy-" + l);
+    const label = button.textContent;
+    button.addEventListener("click", () => {
+      const email = document.querySelector("#" + l + " .email");
+      navigator.clipboard.writeText(email.textContent).then(() => {
+        button.textContent = l === "fr" ? "Adresse copiée" : "Address copied";
+        setTimeout(() => { button.textContent = label; }, 2000);
+      }).catch(() => {
+        const range = document.createRange();
+        range.selectNodeContents(email);
+        const selection = getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+      });
+    });
+  }
+  const hash = location.hash.slice(1);
+  setLang(hash === "fr" || hash === "en" ? hash : (navigator.language || "en").toLowerCase().startsWith("fr") ? "fr" : "en");
+</script>
+</body>
+</html>
